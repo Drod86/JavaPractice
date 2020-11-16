@@ -4,7 +4,8 @@ public class ErrorPractice {
 
 	public static void main(String[] args) {
 		int whatIsThis = "Testing123";
-		System.out.printlin(whatIsThis);
+		numberTest = 3;
+		System.out.printlin(whatIsThis, numberTest);
 	}
 
 }
