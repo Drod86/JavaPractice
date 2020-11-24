@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class StringInstrument{
 	private String name;
 	private int numberOfStrings;
-	private ArrayList<char> strings = new ArrayList<>();
+	private ArrayList<String> strings = new ArrayList<String>();
 	
 	public String getName(){
 		return name;
@@ -19,14 +19,14 @@ public class StringInstrument{
 		this.numberOfStrings = numberOfStrings;
 	}
 	
-	public ArrayList<char> getStrings(){
+	public ArrayList<String> getStrings(){
 		return strings;
 	}
 	
-	public void tune(char[] strings){
-		if (strings.length == strings.length){
-			for (int i = 0; i < strings.length; i++){
-				this.strings[i] = strings[i];
+	public void tune(ArrayList<String> strings){
+		if (this.strings.size() == strings.size()){
+			for (int i = 0; i < strings.size(); i++){
+				this.strings.set(i, strings.get(i));
 			}
 		} else {
 			System.out.printf("You must tune all %n strings. Please enter an array of %n strings.%n", this.numberOfStrings, this.numberOfStrings);
@@ -35,11 +35,11 @@ public class StringInstrument{
 	
 	public boolean isTuned(){
 		boolean tuned = false;
-		if (this.strings.length != this.numberOfStrings){
-			return tuned
+		if (this.strings.size() != this.numberOfStrings){
+			return tuned;
 		} else {
 			for (int i = 0; i < this.numberOfStrings; i++){
-				if (strings[i] != null){
+				if (strings.get(i) != null){
 					tuned = true; 
 				} else {
 					tuned = false;
@@ -56,7 +56,7 @@ public class StringInstrument{
 		this.numberOfStrings = numberOfStrings;
 	}
 	
-	public StringInstrument(String name, int numberOfStrings, char[] strings){
+	public StringInstrument(String name, int numberOfStrings, ArrayList<String> strings){
 		this.name = name;
 		this.numberOfStrings = numberOfStrings;
 		tune(strings);
