@@ -71,8 +71,13 @@ class LotteryGame {
 		}
 		
 		int[] nums = new int[5];
-		for (int i = 0; i < nums.length; i ++) {
+		for (int i = 0; i < nums.length; i++) {
 			nums[i] = Math.abs(lotteryNumber(randomNum(7), player, ranNums, max));
+			for (int k = 0; k < nums.length; k++) {
+				if (nums[i] == nums[k]) {
+					nums[i] = Math.abs(lotteryNumber(randomNum(7), player, ranNums, max));
+				}
+			}
 		}
 		
 		Arrays.sort(nums);
